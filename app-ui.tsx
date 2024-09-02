@@ -40,6 +40,10 @@ const AppUi = () => {
         setCurrent(0);
     };
 
+    const generate = () => {
+        setCurrent(1)
+    }
+
     const steps = [
         {key: 1, title: "Job Details"},
         {key: 2, title: "Result"}
@@ -48,7 +52,8 @@ const AppUi = () => {
     const getFooterButtons = () => {
         return [
             <Button key="back" onClick={toggleDialog}>Cancel</Button>,
-            current === 0 && <Button key="generate" type="primary" onClick={() => setCurrent(1)}>Generate</Button>,
+            current === 0 &&
+            <Button key="generate" type="primary" onClick={generate}>Generate</Button>,
             current === 1 && <Button key="modify" type="primary" onClick={() => setCurrent(0)}>Modify</Button>
         ];
     };
